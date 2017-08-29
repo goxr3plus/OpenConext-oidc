@@ -14,7 +14,7 @@
             <div class="hero-unit">
                 <div class="row-fluid">
                     <!--openid_connect_large.png-->
-                    <div class="span2 visible-desktop"><img src="resources/images/nationalPark.jpg"/></div>
+                    <div class="span2 visible-desktop"><img src="resources/images/download.png"/></div>
 
                     <div class="span10">
                         <h1><spring:message code="home.welcome.title"/></h1>
