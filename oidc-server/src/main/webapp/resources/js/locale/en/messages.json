@@ -436,7 +436,7 @@
 			"title": "Personal",
 			"approved_sites": "Manage Approved Sites",
 			"active_tokens": "Manage Active Tokens",
-            "services": "Manage Services",
+                        "services": "Manage Services",
 			"profile_information": "View Profile Information"
 		},
 		"developer": {
