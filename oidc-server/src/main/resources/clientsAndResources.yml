@@ -4,8 +4,12 @@ clients:
     redirectUris:
       - "https://localhost:8080/redirect"
       - "https://localhost:8080/redirect2"
+      - "http://localhost/jsApp/popup.html"
     scopes:
       - "openid"
+      - "email"
+      - "profile"
+      - "offline_access"
     grantTypes:
       - "authorization_code"
       - "implicit"
