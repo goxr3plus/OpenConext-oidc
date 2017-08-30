@@ -1,4 +1,4 @@
-<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"
+    <samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"
                 xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
                 ID="CORTO4552c086eb0636ad51e4247e703268be70ad98bb"
                 Version="2.0"

@@ -386,6 +386,7 @@ var AppRouter = Backbone.Router.extend({
 
         "user/approved": "approvedSites",
         "user/tokens": "tokens",
+        "user/services": "services",
         "user/profile": "profile",
 
         "dev/dynreg": "dynReg",
@@ -418,6 +419,9 @@ var AppRouter = Backbone.Router.extend({
         this.clientStats = new StatsModel();
         this.accessTokensList = new AccessTokenCollection();
         this.refreshTokensList = new RefreshTokenCollection();
+        this.serviceList = new ServiceCollection();
+        this.serviceRefreshTokensList = new ServiceRefreshTokenCollection();
+        this.serviceAccessTokensList = new ServiceAccessTokenCollection();
 
         this.breadCrumbView = new BreadCrumbView({
             collection: new Backbone.Collection()
@@ -712,6 +716,32 @@ var AppRouter = Backbone.Router.extend({
                 function (collection, response, options) {
                     $('#content').html(view.render().el);
                     setPageTitle($.t('token.manage'));
+                }
+        );
+
+    },
+
+    services: function () {
+        this.breadCrumbView.collection.reset();
+        this.breadCrumbView.collection.add([
+            {text: $.t('admin.home'), href: ""},
+            {text: $.t('token.manage'), href: "manage/#user/services"}
+        ]);
+
+        this.updateSidebar('user/services');
+
+        var view = new ServiceListView({
+            model: {
+                serviceClient: this.serviceList,
+                serviceRefreshT: this.serviceRefreshTokensList,
+                serviceAccessT: this.serviceAccessTokensList
+            },
+            systemScopeList: this.systemScopeList
+        });
+        view.load(
+                function (collection, response, options) {
+                    $('#content').html(view.render().el);
+                    setPageTitle($.t('service.manage'));
                 }
         );
 
@@ -1060,6 +1090,7 @@ $(function () {
         });
 
     }
-});
+}
+);
 
 
